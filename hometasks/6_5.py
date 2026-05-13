@@ -16,6 +16,7 @@ class TestJokes:
         url = "https://api.chucknorris.io/jokes/categories"
         result = requests.get(url)
         category_list = result.json()
+        print(*category_list, sep=', ')
         return category_list
 
     def test_get_category_joke(self, category):
@@ -33,7 +34,7 @@ class TestJokes:
 
 joke = TestJokes()
 categories = joke.get_categories()
-category = str(input("Введите название категории: "))
+category = str(input("Введите название категории из списка выше: "))
 
 """Здесь цикл, чтобы пользователь сразу ввел категорию еще раз"""
 
