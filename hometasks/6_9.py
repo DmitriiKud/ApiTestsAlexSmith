@@ -83,6 +83,11 @@ def read_place_id_from_file(func):
 
     return wrapper
 
+# для очистки файла просто открываем и закрываем в режиме "w"
+def clear_file(filename):
+    """Очищает содержимое файла."""
+    with open(filename, "w") as file:
+        pass
 
 # Это собственно тестовый класс
 class TestNewLocation():
@@ -123,8 +128,9 @@ class TestNewLocation():
 new_place = TestNewLocation()
 
 # в этих строчках я создавал новые локации. Закомментировал их, так как это было разовое действие
-# for location in json_create_location:
-#     new_place.create_new_location(location)
+clear_file("place_id3.txt")
+for location in json_create_location:
+    new_place.create_new_location(location)
 
 # здесь я вызвал методм и сохранил в список все place_id из файла
 place_id_list = new_place.save_place_id_list_from_file()
