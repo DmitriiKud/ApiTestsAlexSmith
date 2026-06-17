@@ -1,12 +1,11 @@
 import requests
-from pyexpat.errors import messages
 
-url = "https://dog.ceo/api/breeds/image/random/100"
+url = "https://dog.ceo/api/breed/hound/images"
 
-headers = {
-    "x-api-key": "free_user_3DU3H2bw6CtsSnSoYA8Ncx2XzzQ"
-}
-
-response = requests.get(url, headers=headers)
+response = requests.get(url)
 message = response.json().get("message")
-print(len(message))
+count = 0
+for i in message:
+    count += 1 if "hound-english" in i else 0
+
+print(count)

@@ -1,8 +1,11 @@
 import requests
 
-url = "https://petstore.swagger.io/v2/store/order/1"
+url = "https://reqres.in/api/users/2"
 
+headers = {
+    "x-api-key": "free_user_3DU3H2bw6CtsSnSoYA8Ncx2XzzQ"
+}
 
-response = requests.delete(url)
+response = requests.delete(url, headers=headers)
 print(response.status_code)
-print(response.json())
+print(response.text)

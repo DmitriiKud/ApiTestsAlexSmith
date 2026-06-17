@@ -1,18 +1,8 @@
 import requests
 
-url = "https://reqres.in/api/users/3"
+url = "https://petstore.swagger.io/v2/store/order/1"
 
-headers = {
-    "x-api-key": "free_user_3DU3H2bw6CtsSnSoYA8Ncx2XzzQ"
-}
 
-json_put = [
-    {
-        "name": "morpheus",
-        "job": "zion resident"
-    }
-]
-
-response = requests.put(url, json=json_put, headers=headers)
+response = requests.delete(url)
 print(response.status_code)
 print(response.json())

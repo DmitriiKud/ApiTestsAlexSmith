@@ -3,7 +3,7 @@ import json
 import requests
 
 
-url = "https://catfact.ninja/fact?max_length=100"
+url = "https://catfact.ninja/facts?max_length=100&limit=5"
 
 response = requests.get(url)
 

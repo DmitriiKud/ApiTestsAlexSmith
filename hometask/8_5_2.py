@@ -1,28 +1,18 @@
 import requests
 
-url = "https://petstore.swagger.io/v2/pet"
+url = "https://reqres.in/api/users/3"
+
+headers = {
+    "x-api-key": "free_user_3DU3H2bw6CtsSnSoYA8Ncx2XzzQ"
+}
 
 json_put = [
     {
-        "id": 1,
-        "category": {
-            "id": 1,
-            "name": "Bobik"
-        },
-        "name": "doggie",
-        "photoUrls": [
-            "string"
-        ],
-        "tags": [
-            {
-                "id": "1",
-                "name": "Bob"
-            }
-        ],
-        "status": "available"
+        "name": "morpheus",
+        "job": "zion resident"
     }
 ]
 
-response = requests.put(url, json=json_put)
+response = requests.put(url, json=json_put, headers=headers)
 print(response.status_code)
-print(response.text)
+print(response.json())
