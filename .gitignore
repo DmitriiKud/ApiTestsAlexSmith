@@ -1,4 +1,17 @@
+# IDE
+.idea/
+*.iml
+
+# Логи и временные файлы
 logs/
 test_results/
+*.log
+*.pyc
+__pycache__/
 
-.idea/
+# Системные файлы
+.DS_Store
+Thumbs.db
+.env
+venv/
+.venv/
